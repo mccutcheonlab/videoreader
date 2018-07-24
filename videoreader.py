@@ -76,7 +76,7 @@ trialLength=35
 # Code to choose rat/session and events
 x = rats['PPP1.7'].sessions['s10']
 all_events = x.left['sipper']
-videofile = 'R:\\DA_and_Reward\\es334\PPP1\\Tanks\\Eelke-171027-111329\\PPP1-171017-081744_Eelke-171027-111329_Cam2.avi'
+videofile = 'C:\\Users\\jaimeHP\\Documents\\GitHub\\videoreader\\PPP1-171017-081744_Eelke-171027-111329_Cam2.avi'
 all_data = jmf.mastersnipper(x, x.left['sipper'], preTrial=preTrial, trialLength=trialLength, bins=bins)
 all_licks = np.concatenate((x.left['lickdata']['licks'], x.right['lickdata']['licks']), axis=0)
 
@@ -89,7 +89,7 @@ lickdatabytrial = jmf.nearestevents(all_events, all_licks, trialLength=trialLeng
 lickdata = lickdatabytrial[event_number]
 lickdata = (lickdata+preTrial)*bins/trialLength # scales to match bin number
 
-savefile = 'R:\\DA_and_Reward\\es334\\PPP1\\video\\newcombined-' + str(event_number) + '.mp4'
+savefile = 'C:\\Users\\jaimeHP\\Documents\\GitHub\\videoreader\\video\\newcombined-' + str(event_number) + '.mp4'
   
     #makevideoclip(videofile, event, data, savefile=savefile)
    
@@ -119,7 +119,7 @@ a2 = animation.resize((420,160))
 final_clip =  mv.CompositeVideoClip([c3,
                                 a2.set_pos(('center', 'top'))])
     #final_clip.save_frame('R:\\DA_and_Reward\\es334\\PPP1\\video\\frame2.png', t=15)
-final_clip.write_videofile(savefile, fps=10, verbose=False)
+final_clip.write_videofile(savefile, fps=5, verbose=False)
     
     #final_clip.ipython_display(width=280)
     #final_clip.save_frame('R:\\DA_and_Reward\\es334\\PPP1\\video\\frame.png', t=10)
